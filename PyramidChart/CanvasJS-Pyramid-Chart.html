@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	exportEnabled: true,
+	theme: "light1",
+	title:{
+		text: "Parent's Education Level"
+	},
+	data: [{
+		type: "pyramid",
+		yValueFormatString: "#\"%\"",
+		indexLabelFontColor: "black",
+		indexLabelFontSize: 16,
+		indexLabel: "{label} - {y}",
+		//reversed: true, // Reverses the pyramid
+		dataPoints: [
+		  { label: 'Some High School', y: 17.9 },
+          { label: 'High School', y: 19.6 },
+          { label: 'Some College', y: 22.6 },
+          { label: 'Associate', y: 22.2 },
+          { label: 'Bachelor\'s Degree', y: 11.8 },
+          { label: 'Master\'s Degree', y: 5.9 }
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 500px; max-width: 920px; margin: 0px auto;"></div>
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+</body>
+</html>
